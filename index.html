@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Swimming: Benefits, Types, and Safety Tips - Interactive Infographic">
+    <title>Rhaizen Swimming Infographic</title>
+
+    <!-- Import Google Fonts - Poppins for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===================================
+           GLOBAL STYLES & RESET
+           =================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        /* ===================================
+           HEADER & NAVIGATION
+           =================================== */
+        header {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            z-index: 100;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '🏊';
+            font-size: 32px;
+        }
+
+        /* Navigation Menu */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Underline animation on hover */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffeb3b;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===================================
+           MAIN CONTAINER & SECTIONS
+           =================================== */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section Heading */
+        .section-heading {
+            text-align: center;
+            margin: 3rem 0 1rem 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0066cc;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #0066cc, #0099ff);
+            border-radius: 2px;
+        }
+
+        /* ===================================
+           CARD STYLES (Main Infographic Sections)
+           =================================== */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            border-left: 5px solid #0099ff;
+        }
+
+        /* Staggered animation for cards */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.3s; }
+        .card:nth-child(3) { animation-delay: 0.4s; }
+        .card:nth-child(4) { animation-delay: 0.5s; }
+        .card:nth-child(5) { animation-delay: 0.6s; }
+        .card:nth-child(6) { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Card hover effect */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.25);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .card-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .card-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+
+        .card-list li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .card-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0099ff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* ===================================
+           IMAGE PLACEHOLDER SECTION
+           =================================== */
+        .canva-section {
+            background: linear-gradient(135deg, #e0f2f7 0%, #fff 100%);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 3px dashed #0099ff;
+            animation: fadeInUp 0.8s ease-out 0.8s forwards;
+            opacity: 0;
+        }
+
+        .canva-section h2 {
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+            font-size: 22px;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            overflow: auto;
+        }
+
+        .placeholder-text {
+            color: #0066cc;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        /* ===================================
+           FOOTER
+           =================================== */
+        footer {
+            background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 -4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* ===================================
+           BENEFITS GRID LAYOUT
+           =================================== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, #e0f2f7 0%, #f0f8ff 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 3px solid #0099ff;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-title {
+            font-weight: 700;
+            color: #0066cc;
+            font-size: 16px;
+        }
+
+        .benefit-text {
+            font-size: 13px;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* ===================================
+           STROKES GRID LAYOUT
+           =================================== */
+        .strokes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stroke-card {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e0f2f7 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #0099ff;
+            transition: all 0.3s ease;
+        }
+
+        .stroke-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.2);
+        }
+
+        .stroke-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stroke-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 0.8rem;
+        }
+
+        .stroke-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===================================
+           FUN FACTS STYLING
+           =================================== */
+        .facts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .fact-box {
+            background: linear-gradient(135deg, #0066cc, #0099ff);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fact-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+
+        .fact-box:hover::before {
+            left: 100%;
+        }
+
+        .fact-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.3);
+        }
+
+        .fact-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===================================
+           SAFETY TIPS STYLING
+           =================================== */
+        .safety-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .safety-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #e0f2f7 0%, #f0f8ff 100%);
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+            transition: all 0.3s ease;
+        }
+
+        .safety-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+        }
+
+        .safety-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .safety-content h4 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+            font-size: 16px;
+        }
+
+        .safety-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===================================
+           RESPONSIVE DESIGN
+           =================================== */
+        @media (max-width: 768px) {
+            /* Adjust header for mobile */
+            header {
+                padding: 1rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            nav ul {
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            /* Adjust main content padding */
+            main {
+                padding: 1rem;
+            }
+
+            /* Adjust card padding */
+            .card {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+
+            /* Adjust section heading */
+            .section-heading {
+                font-size: 22px;
+                margin: 2rem 0 1rem 0;
+            }
+
+            /* Image placeholder height */
+            /* Removed fixed height to allow dynamic sizing */
+
+            /* Benefits grid - single column for very small screens */
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .benefit-item {
+                padding: 1rem;
+            }
+
+            /* Strokes grid on mobile */
+            .strokes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stroke-card {
+                padding: 1.5rem;
+            }
+
+            /* Fun facts on mobile */
+            .facts-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .fact-box {
+                padding: 1.5rem;
+            }
+
+            /* Safety list on mobile */
+            .safety-list {
+                gap: 0.8rem;
+            }
+
+            .safety-item {
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .safety-icon {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .card-title {
+                font-size: 20px;
+            }
+
+            .section-heading {
+                font-size: 18px;
+            }
+
+            .image-placeholder {
+                height: 200px;
+                font-size: 14px;
+            }
+        }
+
+        /* ===================================
+           SCROLL ANIMATIONS (AOS-like effect)
+           =================================== */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================
+         HEADER WITH NAVIGATION
+         ============================================ -->
+    <header>
+        <div class="header-container">
+            <!-- Logo section with emoji icon -->
+            <div class="logo">Swimming Infographic</div>
+            
+            <!-- Navigation menu with smooth scroll links -->
+            <nav>
+                <ul>
+                    <li><a href="#what-is-swimming">What is Swimming</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#strokes">Strokes</a></li>
+                    <li><a href="#safety">Safety</a></li>
+                    <li><a href="#facts">Fun Facts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main>
+        <!-- Page Title -->
+        <h1 class="section-heading" style="margin-top: 2rem; font-size: 32px;">
+            🌊 Swimming: Benefits, Types, and Safety Tips 🌊
+        </h1>
+
+        <!-- ============================================
+             SECTION 1: WHAT IS SWIMMING
+             ============================================ -->
+        <div class="card" id="what-is-swimming">
+            <div class="card-icon">🏊‍♂️</div>
+            <h2 class="card-title">What is Swimming?</h2>
+            <p class="card-content">
+                Swimming is a sport and recreational activity where individuals propel themselves through water using 
+                their limbs and body movements. It's one of the most important life skills and can be practiced in 
+                pools, oceans, lakes, and rivers. Swimming combines physical activity with enjoyment and is suitable 
+                for people of all ages.
+            </p>
+            <ul class="card-list">
+                <li>Full-body workout and cardiovascular exercise</li>
+                <li>Low-impact activity suitable for all fitness levels</li>
+                <li>Can be done recreationally or competitively</li>
+                <li>Essential water safety skill</li>
+            </ul>
+        </div>
+
+        <!-- ============================================
+             SECTION 2: BENEFITS OF SWIMMING
+             ============================================ -->
+        <section id="benefits">
+            <h2 class="section-heading">Benefits of Swimming</h2>
+
+            <!-- Benefits Grid Layout -->
+            <div class="benefits-grid">
+                <!-- Benefit 1: Cardiovascular Health -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">❤️</div>
+                    <div class="benefit-title">Cardiovascular Health</div>
+                    <div class="benefit-text">Improves heart and lung function, reduces blood pressure</div>
+                </div>
+
+                <!-- Benefit 2: Muscle Strength -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">💪</div>
+                    <div class="benefit-title">Muscle Strength</div>
+                    <div class="benefit-text">Builds and tones muscles throughout the body</div>
+                </div>
+
+                <!-- Benefit 3: Weight Management -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚖️</div>
+                    <div class="benefit-title">Weight Management</div>
+                    <div class="benefit-text">Burns calories and helps maintain healthy body weight</div>
+                </div>
+
+                <!-- Benefit 4: Mental Health -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">🧠</div>
+                    <div class="benefit-title">Mental Wellness</div>
+                    <div class="benefit-text">Reduces stress and improves mood and sleep quality</div>
+                </div>
+
+                <!-- Benefit 5: Low Impact -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛟</div>
+                    <div class="benefit-title">Joint-Friendly</div>
+                    <div class="benefit-text">Gentle on joints, ideal for injury recovery</div>
+                </div>
+
+                <!-- Benefit 6: Longevity -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Longevity</div>
+                    <div class="benefit-text">Regular swimmers live longer and healthier lives</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 3: TYPES OF SWIMMING STROKES
+             ============================================ -->
+        <section id="strokes">
+            <h2 class="section-heading">Types of Swimming Strokes</h2>
+
+            <!-- Strokes Grid Layout -->
+            <div class="strokes-grid">
+                <!-- Stroke 1: Freestyle -->
+                <div class="stroke-card">
+                    <div class="stroke-icon">🏊</div>
+                    <div class="stroke-name">Freestyle</div>
+                    <div class="stroke-description">
+                        The fastest and most popular stroke. Alternating arm movements with flutter kick. 
+                        Also known as front crawl.
+                    </div>
+                </div>
+
+                <!-- Stroke 2: Breaststroke -->
+                <div class="stroke-card">
+                    <div class="stroke-icon">🤽</div>
+                    <div class="stroke-name">Breaststroke</div>
+                    <div class="stroke-description">
+                        Synchronized arm and leg movement with a frog-like kick. Great for beginners 
+                        and maintaining steady pace.
+                    </div>
+                </div>
+
+                <!-- Stroke 3: Backstroke -->
+                <div class="stroke-card">
+                    <div class="stroke-icon">🏊‍♀️</div>
+                    <div class="stroke-name">Backstroke</div>
+                    <div class="stroke-description">
+                        Performed on your back with alternating arm movements and flutter kick. 
+                        Excellent for back muscles.
+                    </div>
+                </div>
+
+                <!-- Stroke 4: Butterfly -->
+                <div class="stroke-card">
+                    <div class="stroke-icon">🦋</div>
+                    <div class="stroke-name">Butterfly</div>
+                    <div class="stroke-description">
+                        Advanced stroke with simultaneous arm movements and dolphin kick. 
+                        Most demanding but most powerful stroke.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 4: SAFETY TIPS
+             ============================================ -->
+        <section id="safety">
+            <h2 class="section-heading">Safety Tips</h2>
+
+            <!-- Safety List -->
+            <div class="safety-list">
+                <!-- Safety Tip 1 -->
+                <div class="safety-item">
+                    <div class="safety-icon">🧑‍🔬</div>
+                    <div class="safety-content">
+                        <h4>Learn from a Professional</h4>
+                        <p>Take swimming lessons from a certified instructor to build proper technique and water confidence.</p>
+                    </div>
+                </div>
+
+                <!-- Safety Tip 2 -->
+                <div class="safety-item">
+                    <div class="safety-icon">👨‍👩‍👧</div>
+                    <div class="safety-content">
+                        <h4>Never Swim Alone</h4>
+                        <p>Always swim with a buddy or in lifeguard-supervised areas. Never leave children unattended.</p>
+                    </div>
+                </div>
+
+                <!-- Safety Tip 3 -->
+                <div class="safety-item">
+                    <div class="safety-icon">🧴</div>
+                    <div class="safety-content">
+                        <h4>Use Sun Protection</h4>
+                        <p>Apply waterproof sunscreen, wear UV-protective clothing, and use swim caps when possible.</p>
+                    </div>
+                </div>
+
+                <!-- Safety Tip 4 -->
+                <div class="safety-item">
+                    <div class="safety-icon">🏊‍♂️</div>
+                    <div class="safety-content">
+                        <h4>Warm Up & Cool Down</h4>
+                        <p>Start with 5-10 minutes of warm-up exercises and end with stretching to prevent injuries.</p>
+                    </div>
+                </div>
+
+                <!-- Safety Tip 5 -->
+                <div class="safety-item">
+                    <div class="safety-icon">⚠️</div>
+                    <div class="safety-content">
+                        <h4>Check Water Conditions</h4>
+                        <p>Always check for currents, tides, temperature, and water quality before swimming outdoors.</p>
+                    </div>
+                </div>
+
+                <!-- Safety Tip 6 -->
+                <div class="safety-item">
+                    <div class="safety-icon">🚫</div>
+                    <div class="safety-content">
+                        <h4>Know Your Limits</h4>
+                        <p>Don't overestimate your abilities. Stay within designated swimming areas and reach out if you need help.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 5: FUN FACTS
+             ============================================ -->
+        <section id="facts">
+            <h2 class="section-heading">Fun Facts About Swimming</h2>
+
+            <!-- Facts Container Grid -->
+            <div class="facts-container">
+                <!-- Fact 1 -->
+                <div class="fact-box">
+                    <div class="fact-number">92%</div>
+                    <div class="fact-text">of people who learn to swim as children never lose the skill as adults</div>
+                </div>
+
+                <!-- Fact 2 -->
+                <div class="fact-box">
+                    <div class="fact-number">30</div>
+                    <div class="fact-text">minutes of swimming can burn up to 250-300 calories</div>
+                </div>
+
+                <!-- Fact 3 -->
+                <div class="fact-box">
+                    <div class="fact-number">300+</div>
+                    <div class="fact-text">muscles are involved in a single swimming movement</div>
+                </div>
+
+                <!-- Fact 4 -->
+                <div class="fact-box">
+                    <div class="fact-number">100M</div>
+                    <div class="fact-text">Olympic freestyle record is faster than 46 seconds</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CANVA INFOGRAPHIC SECTION
+             ============================================ -->
+        <section class="canva-section">
+            <h2>🎨 Infographic</h2>
+            <p style="color: #666; margin-bottom: 1.5rem;">
+                
+            </p>
+            
+            <!-- Image Placeholder - Replace src with your actual image URL -->
+            <div class="image-placeholder">
+                <img src="INFOGRAPHIC.png" alt="My Canva Infographic" style="width: auto; height: auto; max-width: 100%; object-fit: contain;">
+                
+            </div>
+            
+            <p class="placeholder-text">
+                
+            </p>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <p>&copy; 2026 Swimming Infographic | Created for Water Safety & Health Awareness</p>
+        <p style="margin-top: 0.5rem; font-size: 12px;">Dive into wellness with swimming! 🏊‍♂️</p>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT FOR SCROLL ANIMATIONS
+         ============================================ -->
+    <script>
+        // This script adds fade-in animations as elements appear in viewport
+        // It creates a smooth, professional infographic experience
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all card and section elements that should animate
+            const elementsToAnimate = document.querySelectorAll('.card, .benefits-grid, .strokes-grid, .safety-list, .facts-container, .canva-section');
+
+            // Create Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // When element comes into view, trigger the fade-in animation
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = '';
+                        entry.target.style.opacity = '1';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Trigger animation when element is 30% visible
+                threshold: 0.3
+            });
+
+            // Observe all elements
+            elementsToAnimate.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Only prevent default for internal anchors
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        
+                        if (target) {
+                            // Smooth scroll with offset for header
+                            const headerHeight = document.querySelector('header').offsetHeight;
+                            const targetPosition = target.offsetTop - headerHeight - 20;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
